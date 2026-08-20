@@ -59,7 +59,7 @@ O snapshot é obrigatório: renderizar o payload somente no envio poderia reflet
 
 ### 4.2 Seleção e processamento pelo worker
 
-O worker será um processo separado da API, com a mesma `DATABASE_URL` e uma instância própria de `PrismaClient`. `src/worker.ts` e `npm run worker` são a **proposta R-001**; ainda não existem no clone.
+O worker será um processo separado da API, com a mesma `DATABASE_URL` e uma instância própria de `PrismaClient`. A criação de um novo entrypoint e de um script dedicado é a **proposta R-001**; seus nomes e caminhos serão definidos na implementação.
 
 Em cada ciclo, aproximadamente a cada 2 segundos:
 
@@ -471,7 +471,7 @@ O código-base não identifica uma plataforma de tracing. O ponto de integraçã
 ### Dependências novas ou decisões de implementação
 
 - Modelos e migrações Prisma para configuração, Outbox, deliveries e DLQ ainda precisam ser criados; não existem no clone.
-- Módulo `src/modules/webhooks`, worker, entry-point e script `worker` ainda precisam ser criados.
+- Um novo módulo de webhooks, o worker, seu entrypoint e o script de execução ainda precisam ser criados; nomes e caminhos serão definidos na implementação seguindo o padrão atual do projeto.
 - HMAC pode usar `node:crypto`, disponível no runtime Node 20, sem exigir uma biblioteca externa. A escolha precisa ser confirmada na implementação.
 - Um cliente HTTP outbound ainda precisa ser escolhido. Usar a API de `fetch` do Node 20 é uma proposta; nenhum cliente externo é assumido por este FDD.
 - Não há Redis nem outro broker proposto. O design depende do MySQL existente e de um segundo processo Node.

@@ -65,7 +65,7 @@ Foram registrados quatro ajustes principais durante a produção e a revisão:
 1. **`customer_id` e contrato REST:** a conversa não decidiu se o identificador ficaria no body ou no path. O RFC passou a manter isso como questão aberta, e o FDD escolheu uma forma coerente apenas como contrato `PROPOSTA`, sem atribuí-la à reunião.
 2. **Fronteira entre RFC e FDD:** o RFC foi mantido em nível de direção e trade-offs; exemplos de payload, endpoints, estados, códigos `WEBHOOK_*` e integração com arquivos foram concentrados no FDD.
 3. **Auditoria do FDD:** a matriz de erros `WEBHOOK_*`, a distinção entre erros já existentes e códigos novos, e a ausência de uma plataforma de tracing foram explicitadas para evitar que o design parecesse uma implementação existente.
-4. **Auditoria do Tracker:** o stub foi substituído por 126 linhas rastreáveis. Na revisão, o RF-04 foi corrigido para não apresentar a retenção de deliveries como fato da transcrição; referências de seções foram ajustadas para os títulos reais. O resultado final tem 70 de 70 linhas `TRANSCRICAO` com timestamp e pessoa e 18 linhas `CODE`.
+4. **Auditoria do Tracker:** o stub foi substituído por 126 linhas rastreáveis. Na revisão, o RF-04 foi corrigido para não apresentar a retenção de deliveries como fato da transcrição; referências de seções foram ajustadas para os títulos reais. Uma segunda auditoria corrigiu a taxonomia da coluna `Fonte`: propostas e pendências permaneceram em `Tipo`, enquanto a origem passou a usar somente `TRANSCRICAO` ou `CODIGO`. O resultado final tem 104 linhas `TRANSCRICAO` (82,5%), todas com citações pontuais no formato `[hh:mm] Nome`, e 22 linhas `CODIGO` com caminhos verificáveis.
 
 ## Como navegar a entrega
 

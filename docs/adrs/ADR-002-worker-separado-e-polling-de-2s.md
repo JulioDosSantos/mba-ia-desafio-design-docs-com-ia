@@ -16,7 +16,7 @@ Executar o worker como processo separado da API, consultando a Outbox em polling
 
 O cenário inicial é single-worker. Nesse cenário, a ordem por `created_at` oferece ordenação implícita por pedido, mas não constitui garantia de ordenação global caso haja paralelismo futuro. Particionamento por `order_id` e lock pessimista ficam postergados.
 
-A reunião sugeriu `src/worker.ts` e `npm run worker` como entry-point e script. Esses nomes são a proposta R-001 do ledger, não arquivos existentes nem uma implementação realizada nesta fase.
+A reunião sugeriu um novo entrypoint e um script dedicado para o worker. A proposta R-001 do ledger preserva essa direção, deixando nomes e caminhos para a fase de implementação.
 
 ## Alternativas Consideradas
 

@@ -14,7 +14,7 @@ A funcionalidade deve integrar a mudança de status no `OrderService.changeStatu
 
 Implementar o design futuro dentro dos padrões existentes:
 
-- organizar o domínio sob a pasta sugerida `src/modules/webhooks`, com controller, service, repository, routes e schemas;
+- organizar o domínio em um novo módulo de webhooks, seguindo o padrão existente de controller, service, repository, routes e schemas; o nome e o caminho serão definidos na implementação;
 - registrar as rotas no router principal e manter a autenticação existente para o CRUD;
 - usar Zod nos contratos e `AppError` com códigos `WEBHOOK_*`, aproveitando o middleware de erro existente;
 - usar Pino e suas regras de redaction, sem introduzir outro logger;
